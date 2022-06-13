@@ -21,3 +21,7 @@ jobs:
       - run: cd packages/types && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - run: npm run build-users-ddb
+      - run: cd packages/users && npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

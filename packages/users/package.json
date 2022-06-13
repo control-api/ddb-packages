@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "lib/",
   "license": "MIT",
+  "author": "Maksym-Haiovets <makcumyt@gmail.com>",
   "repository": "https://github.com/control-api/ddb-packages.git",
   "scripts": {
     "build": "yarn build:types && babel src --out-dir lib --extensions '.ts' --copy-files --no-copy-ignored",
