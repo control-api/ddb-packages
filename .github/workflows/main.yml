@@ -18,6 +18,7 @@ jobs:
 
       - run: cd packages/common-ddb
       - run: npm install
+      - run: npm i yarn
       - run: yarn build
       - run: npm publish
         env: 
