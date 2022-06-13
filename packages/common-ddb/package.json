@@ -13,6 +13,9 @@
     "build": "yarn build:types && babel src --out-dir lib --extensions '.ts' --copy-files --no-copy-ignored",
     "build:types": "tsc -p tsconfig.types.json"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "@babel/cli": "7.17.10",
     "@babel/core": "7.18.5",
