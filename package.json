@@ -6,6 +6,9 @@
   "author": "Maksym-Haiovets <makcumyt@gmail.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "build-common-ddb": "cd packages/common-ddb && yarn build"
+  },
   "devDependencies": {
     "typescript": "4.7.3"
   }
