@@ -16,9 +16,9 @@ jobs:
           registry-url: https://npm.pkg.github.com/@control-api
           scoupe: '@control-api'
 
-      - run: cd packages/common-ddb
       - run: npm install
-      - run: npm run build
+      - run: npm i yarn
+      - run: npm run build-common-ddb
       - run: npm publish
         env: 
           NODE_AUTH_TOKEN: ${{ secrets.WORK_FLOW_TOKEN }}
