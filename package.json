@@ -6,7 +6,8 @@
   "author": "Maksym-Haiovets <makcumyt@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build-common-ddb": "cd packages/common-ddb && yarn && yarn build"
+    "build-common-ddb": "cd packages/common-ddb && yarn && yarn build",
+    "build-types-ddb": "cd packages/types && yarn && yarn build"
   },
   "devDependencies": {
     "@types/node": "17.0.42",
