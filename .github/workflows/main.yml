@@ -12,9 +12,8 @@ jobs:
           always-auth: true
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-          scope: '@control-api'
       - run: yarn
       - run: npm run build-common-ddb
-      - run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc && cd packages/common-ddb && yarn publish
+      - run: cd packages/common-ddb && yarn publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
