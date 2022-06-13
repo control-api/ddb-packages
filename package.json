@@ -5,7 +5,6 @@
   "repository": "https://github.com/control-api/ddb-packages.git",
   "author": "Maksym-Haiovets <makcumyt@gmail.com>",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "build-common-ddb": "cd packages/common-ddb && yarn && yarn build"
   },
