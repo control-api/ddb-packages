@@ -18,8 +18,6 @@ jobs:
 
       - run: cd packages/common-ddb
       - run: npm install
-      - run: npm i yarn
-      - run: yarn run build
       - run: npm publish
         env: 
           NODE_AUTH_TOKEN: ${{ secrets.WORK_FLOW_TOKEN }}
