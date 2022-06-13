@@ -1,4 +1,4 @@
-name: CI Publish Package to npmjs
+name: CI Publish Package to npm
 on:
   push:
     branches: [ "main" ]
