@@ -1,5 +1,15 @@
 import {UserFacet} from './users';
 
+export type FacetKeys = {
+  hash_key: string;
+  range_key: string;
+}
+
+export type FacetGSIKeys = {
+  GSI1HK: string;
+  GSI1RK: string;
+}
+
 export type FacetType = UserFacet | string;
 
 export type DDBItemDefaults = {
