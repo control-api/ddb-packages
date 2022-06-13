@@ -1,6 +1,6 @@
 {
   "name": "@control-api/common-ddb",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "main": "lib/",
   "license": "MIT",
   "author": "Maksym-Haiovets <makcumyt@gmail.com>",
@@ -14,7 +14,9 @@
     "@babel/core": "7.18.5",
     "@babel/preset-env": "7.18.2",
     "@babel/preset-typescript": "7.17.12",
+    "@control-api/types-ddb": "1.0.1",
     "@types/lodash": "4.14.182",
+    "types-ddb": "1.0.0",
     "typescript": "4.7.3"
   },
   "dependencies": {
