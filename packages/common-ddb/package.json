@@ -1,5 +1,5 @@
 {
-  "name": "@control/common-ddb",
+  "name": "@control-api/common-ddb",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
