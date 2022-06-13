@@ -11,7 +11,6 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: https://registry.npmjs.org/
-          scope: '@control-api'
           always-auth: true
       - run: npm install
       - run: npm run build-common-ddb
