@@ -962,10 +962,10 @@
     lodash "4.17.21"
     p-map "5.5.0"
 
-"@control-api/types-ddb@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@control-api/types-ddb/-/types-ddb-1.0.2.tgz#07e6a362eae2aaf0517f7bca7c1a40f18902b32b"
-  integrity sha512-Hp5QXsGzxpnND/RN4oFqiRzqiDPQoQnF1DRWUxfc8mHf/kNfvMKQ34rLlf55xi0i5uFZNzrk4OMkQ8JTMUerMQ==
+"@control-api/types-ddb@1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@control-api/types-ddb/-/types-ddb-1.0.3.tgz#28e4d78e6846076df4bb01acd26accd4f541bb8f"
+  integrity sha512-zM2r/fLi0RootqFtD92ffQxMK3SUyQ8c77WeexqQ5pbl9VAPqvxHR3KA4gJrXlBygIORbRpbZuDua+vFNMrzAg==
 
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"

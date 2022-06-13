@@ -1,4 +1,4 @@
-import type {Users} from '@control-api/types-ddb';
+import type {DDB, Users} from '@control-api/types-ddb';
 
 export const tableName = 'users';
 export const indexTableName = 'users';
@@ -6,7 +6,7 @@ export const indexTableName = 'users';
 export const USER_PREFIX = 'user';
 export const USER_FACET_TYPE = 'User';
 
-export function getUserFacetKeys(userId: string, email: string) {
+export function getUserFacetKeys(userId: string, email: string): DDB.FacetKeys {
   return {
     hash_key: getUserHashKey(userId),
     range_key: getUserRangeKey(email),
@@ -21,7 +21,7 @@ export function getUserRangeKey(email: string): string {
   return `${USER_PREFIX}#${email}`;
 }
 
-export function getUserGSIFacetKeys(email: string) {
+export function getUserGSIFacetKeys(email: string): DDB.FacetGSIKeys {
   return {
     GSI1HK: getUserGSI1HK(email),
     GSI1RK: getUserGSI1RK(),
