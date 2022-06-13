@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build-common-ddb": "cd packages/common-ddb && yarn build"
+    "build-common-ddb": "cd packages/common-ddb && yarn && yarn build"
   },
   "devDependencies": {
     "typescript": "4.7.3"
