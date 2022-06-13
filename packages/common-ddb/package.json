@@ -7,7 +7,7 @@
   "repository": "https://github.com/control-api/ddb-packages.git",
   "private": true,
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@control-api"
+    "registry": "https://registry.npmjs.org/@control-api"
   },
   "scripts": {
     "build": "yarn build:types && babel src --out-dir lib --extensions '.ts' --copy-files --no-copy-ignored",
