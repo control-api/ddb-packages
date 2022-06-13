@@ -9,6 +9,7 @@
     "build-common-ddb": "cd packages/common-ddb && yarn && yarn build"
   },
   "devDependencies": {
+    "@types/node": "17.0.42",
     "@typescript-eslint/eslint-plugin": "5.27.1",
     "@typescript-eslint/parser": "5.27.1",
     "eslint": "8.17.0",
