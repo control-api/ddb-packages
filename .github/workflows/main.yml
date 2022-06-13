@@ -15,6 +15,6 @@ jobs:
           always-auth: true
       - run: npm install
       - run: npm run build-common-ddb
-      - run: npm publish
+      - run: cd packages/common-ddb && npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
