@@ -3,5 +3,6 @@ export * from './find';
 export * from './batch-get';
 export * from './insert-one';
 export * from './insert-many';
+export * from './update-one';
 export * from './remove-one';
 export * from './remove-many';
