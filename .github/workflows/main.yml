@@ -15,7 +15,8 @@ jobs:
           node-version: 16
           registry-url: https://npm.pkg.github.com/@control-api
           scoupe: '@control-api'
-          
+
+      - run: cd packages/common-ddb
       - run: npm install
       - run: npm build
       - run: npm publish
