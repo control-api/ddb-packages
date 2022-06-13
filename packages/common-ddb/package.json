@@ -6,7 +6,7 @@
   "author": "Maksym-Haiovets <makcumyt@gmail.com>",
   "repository": "https://github.com/control-api/ddb-packages.git",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/@control-api"
+    "registry": "https://npm.pkg.github.com/@control-api"
   },
   "scripts": {
     "build": "yarn build:types && babel src --out-dir lib --extensions '.ts' --copy-files --no-copy-ignored",
