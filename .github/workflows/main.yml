@@ -16,4 +16,4 @@ jobs:
       - run: npm run build-common-ddb
       - run: cd packages/common-ddb && yarn publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ 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 }}
