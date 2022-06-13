@@ -1,24 +1,19 @@
-name: CI
-
+name: CI Publish Package to npmjs
 on:
   push:
     branches: [ "main" ]
-    
-  workflow_dispatch:
-
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 16
-          registry-url: 'https://registry.npmjs.org/@control-api'
-          scope: '@control-api'
-
-      - run: npm install
-      - run: npm i yarn
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@octocat'
+      - run: yarn
       - run: npm run build-common-ddb
-      - run: cd packages/common-ddb && npm publish
-        env: 
+      - run: cd packages/common-ddb && yarn publish
+        env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
