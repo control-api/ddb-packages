@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           node-version: 16
-          registry-url: https://npm.pkg.github.com/@control-api
+          registry-url: 'https://registry.npmjs.org/@control-api'
           scoupe: '@control-api'
 
       - run: npm install
