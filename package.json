@@ -8,9 +8,6 @@
   "scripts": {
     "build-common-ddb": "cd packages/common-ddb && yarn && yarn build"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "devDependencies": {
     "typescript": "4.7.3"
   }
