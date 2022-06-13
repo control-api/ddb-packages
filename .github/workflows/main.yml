@@ -15,6 +15,7 @@ jobs:
           scope: '@control-api'
       - run: yarn
       - run: npm run build-common-ddb
+      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
       - run: cd packages/common-ddb && yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
