@@ -14,6 +14,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: yarn
       - run: npm run build-common-ddb
-      - run: - run: echo "//registry.npmjs.org/:_authToken=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" > ~/.npmrc && cd packages/common-ddb && yarn publish
+      - run: echo "//registry.npmjs.org/:_authToken=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" > ~/.npmrc && cd packages/common-ddb && yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
