@@ -12,7 +12,7 @@ jobs:
           always-auth: true
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-          scope: '@octocat'
+          scope: '@control-api'
       - run: yarn
       - run: npm run build-common-ddb
       - run: cd packages/common-ddb && yarn publish
