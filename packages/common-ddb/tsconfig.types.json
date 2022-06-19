@@ -6,6 +6,7 @@
     "declaration": true,
     "declarationDir": "lib",
     "emitDeclarationOnly": true,
-    "isolatedModules": false
+    "isolatedModules": false,
+    "esModuleInterop": true,
   }
 }
