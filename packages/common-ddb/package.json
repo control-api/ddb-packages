@@ -23,6 +23,6 @@
     "@aws/dynamodb-expressions": "0.7.3",
     "aws-sdk": "2.1152.0",
     "lodash": "4.17.21",
-    "p-map": "5.5.0"
+    "p-map": "4.0.0"
   }
 }
