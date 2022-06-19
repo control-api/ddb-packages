@@ -9,7 +9,7 @@ type DeleteManyParams = {
   Keys: Record<string, unknown>[];
 };
 
-export function deleteMany(
+export async function deleteMany(
     params: DeleteManyParams,
     retryCount = 1,
 ): Promise<DocumentClient.BatchWriteItemOutput[]> {

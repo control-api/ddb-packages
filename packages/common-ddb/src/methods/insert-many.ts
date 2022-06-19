@@ -11,7 +11,7 @@ type InsertManyParams = {
   Items: any[];
 };
 
-export function insertMany(
+export async function insertMany(
     params: InsertManyParams,
     retryCount = 1,
 ): Promise<DocumentClient.BatchWriteItemOutput[]> {
