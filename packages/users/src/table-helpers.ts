@@ -1,7 +1,7 @@
 import type {DDB, Users} from '@control-api/types-ddb';
 
 export const tableName = 'users';
-export const indexTableName = 'users';
+export const indexTableName = 'GSI1-index';
 
 export const USER_PREFIX = 'user';
 export const USER_FACET_TYPE = 'User';
