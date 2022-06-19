@@ -19,7 +19,7 @@
     "typescript": "4.7.3"
   },
   "dependencies": {
-    "@control-api/common-ddb": "1.1.4",
+    "@control-api/common-ddb": "1.1.7",
     "lodash": "4.17.21"
   }
 }
