@@ -1,6 +1,6 @@
 {
   "name": "@control-api/types-ddb",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "main": "lib/",
   "license": "MIT",
   "author": "Maksym-Haiovets <makcumyt@gmail.com>",
@@ -9,8 +9,10 @@
     "build": "yarn build:types && babel src --out-dir lib --extensions '.ts' --copy-files --no-copy-ignored",
     "build:types": "tsc -p tsconfig.types.json"
   },
+  "dependencies": {
+    "bank-sdk": "*"
+  },
   "devDependencies": {
-    "bank-sdk": "*",
     "@babel/cli": "7.17.10",
     "@babel/core": "7.18.5",
     "@babel/preset-env": "7.18.2",
