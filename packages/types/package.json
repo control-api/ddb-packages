@@ -1,6 +1,6 @@
 {
   "name": "@control-api/types-ddb",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "lib/",
   "license": "MIT",
   "author": "Maksym-Haiovets <makcumyt@gmail.com>",
@@ -10,6 +10,7 @@
     "build:types": "tsc -p tsconfig.types.json"
   },
   "devDependencies": {
+    "bank-sdk": "*",
     "@babel/cli": "7.17.10",
     "@babel/core": "7.18.5",
     "@babel/preset-env": "7.18.2",
