@@ -8,7 +8,8 @@
   "scripts": {
     "build-common-ddb": "cd packages/common-ddb && yarn && yarn build",
     "build-types-ddb": "cd packages/types && yarn && yarn build",
-    "build-users-ddb": "cd packages/users && yarn && yarn build"
+    "build-users-ddb": "cd packages/users && yarn && yarn build",
+    "build-tokens-ddb": "cd packages/bank-tokens && yarn && yarn build"
   },
   "devDependencies": {
     "@types/node": "17.0.42",
