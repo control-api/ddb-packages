@@ -3,10 +3,10 @@ import type {BankTokens} from '@control-api/types-ddb';
 import {getTokenFacetKeys, getTokenFacetType, tableName} from '../table-helpers';
 
 export async function createBankToken(bankToken: BankTokens.BankToken): Promise<void> {
-  const {userId, token} = bankToken;
+  const {userId} = bankToken;
 
   const item = {
-    ...getTokenFacetKeys(userId, token),
+    ...getTokenFacetKeys(userId),
     ...bankToken,
     facetType: getTokenFacetType(),
   };
