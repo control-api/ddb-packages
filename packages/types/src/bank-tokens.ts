@@ -9,7 +9,9 @@ export type DDBTokenFacet = {
 } & BankToken;
 
 export type BankToken = {
+  id: string;
   userId: string;
   token: string;
   bankName: BankName;
+  createdAt: string;
 }
