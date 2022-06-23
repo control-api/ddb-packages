@@ -3,8 +3,11 @@ import {DDB} from '@control-api/types-ddb';
 
 export function fromDDBItem<T>(item: T & DDB.DDBItemDefaults): DDB.ItemWithoutDDBDefaults<T> {
   stripHashRangeKeys(item);
-  stripGSIHashRangeKeys(item);
   stripFacetTypeKey(item);
+
+  if (item?.GSI1HK) {
+    stripGSIHashRangeKeys(item);
+  }
 
   return item;
 }
