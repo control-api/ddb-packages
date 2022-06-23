@@ -1,6 +1,7 @@
 import {BankName} from 'bank-sdk';
 
 export type TokenFacet = 'Token';
+export type InfoFacet = 'Info';
 
 export type DDBTokenFacet = {
   hash_key: string;
@@ -13,5 +14,19 @@ export type BankToken = {
   userId: string;
   token: string;
   bankName: BankName;
+  createdAt: string;
+}
+
+export type DDBInfoFacet = {
+  hash_key: string;
+  range_key: string;
+  facetType: InfoFacet;
+} & BankInfo;
+
+export type BankInfo = {
+  id: string;
+  userId: string;
+  bankName: BankName;
+  cardNumbers: string[];
   createdAt: string;
 }

@@ -1,6 +1,6 @@
 import type {BankTokens, DDB} from '@control-api/types-ddb';
 
-export const tableName = 'bank-tokens';
+export const tableName = 'bank-infos';
 
 export const TOKEN_PREFIX = 'token';
 export const BANK_TOKEN_FACET_TYPE = 'Token';
