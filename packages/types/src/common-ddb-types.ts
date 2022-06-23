@@ -15,8 +15,8 @@ export type FacetType = UserFacet | string;
 export type DDBItemDefaults = {
   hash_key: string;
   range_key: string;
-  GSI1HK: string;
-  GSI1RK: string;
+  GSI1HK?: string;
+  GSI1RK?: string;
   facetType: FacetType;
 }
 
