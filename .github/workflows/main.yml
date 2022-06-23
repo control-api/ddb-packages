@@ -29,3 +29,7 @@ jobs:
       - run: cd packages/bank-infos && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - run: npm run build-transactions-ddb
+      - run: cd packages/payment-transactions && npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
