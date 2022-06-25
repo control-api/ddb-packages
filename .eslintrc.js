@@ -21,7 +21,7 @@ module.exports = {
     'no-multi-spaces': ['error'],
     'require-jsdoc': ['off'],
     'no-empty-function': ['off'],
-    'max-len': ['error', {'code': 1000}],
+    'max-len': ['error', {'code': 100}],
     'no-multiple-empty-lines': ['error', {'max': 1}],
     'prefer-destructuring': [
       'error',
