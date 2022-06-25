@@ -32,6 +32,6 @@ export type BankInfo = {
   id: string;
   userId: string;
   bankName: BankName;
-  cardNumbers: Card[];
+  cards: Card[];
   createdAt: string;
 }
