@@ -7,7 +7,11 @@ export const TRANSACTION_FACET_TYPE = 'Transaction';
 export const TRANSACTION_PREFIX = 'transaction';
 export const CARD_NUMBER_PREFIX = 'card';
 
-export function getTransactionFacetKey(userId: string, cardNumber: string, transactionId: string): DDB.FacetKeys {
+export function getTransactionFacetKey(
+    userId: string,
+    cardNumber: string,
+    transactionId: string,
+): DDB.FacetKeys {
   return {
     hash_key: getTransactionHashKey(userId),
     range_key: getTransactionRangeKey(cardNumber, transactionId),
