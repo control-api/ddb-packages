@@ -1,6 +1,6 @@
 {
   "name": "@control-api/bank-infos-ddb",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "lib/",
   "license": "MIT",
   "author": "Maksym-Haiovets <makcumyt@gmail.com>",
