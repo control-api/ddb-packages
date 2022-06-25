@@ -18,6 +18,7 @@ export type Transaction = {
   commissionRate: number;
   cashbackAmount: number;
   balance: number;
+  extCreatedAt: string;
   comment?: string;
   receiptId?: string;
   invoiceId?: string;
