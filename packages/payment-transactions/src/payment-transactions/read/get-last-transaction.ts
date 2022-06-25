@@ -22,6 +22,7 @@ export async function getLastTransactions(
   };
 
   const transactions = await find<PaymentTransactions.DDBTransaction>(params);
+  console.log('transactions', transactions);
 
   if (!transactions?.length) {
     return;
