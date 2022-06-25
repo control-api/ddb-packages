@@ -1,7 +1,8 @@
 import {find, fromDDBItem} from '@control-api/common-ddb';
-import {DDBTransaction, TRANSACTION_FACET_TYPE, TRANSACTION_PREFIX, Transaction, getTransactionHashKey, tableName} from '../../table-helpers';
+import {PaymentTransactions} from '@control-api/types-ddb';
+import {TRANSACTION_FACET_TYPE, TRANSACTION_PREFIX, getTransactionHashKey, tableName} from '../../table-helpers';
 
-export async function getTransactionsByUser(userId: string): Promise<Transaction[]> {
+export async function getTransactionsByUser(userId: string): Promise<PaymentTransactions.Transaction[]> {
   const params = {
     TableName: tableName,
     KeyConditionExpression: 'hash_key = :hash_key and begins_with(range_key, :range_key) and facetType = :facetType',
@@ -13,7 +14,7 @@ export async function getTransactionsByUser(userId: string): Promise<Transaction
     ScanIndexForward: false,
   };
 
-  const transactions = await find<DDBTransaction>(params);
+  const transactions = await find<PaymentTransactions.DDBTransaction>(params);
 
-  return transactions.map((item) => fromDDBItem<DDBTransaction>(item));
+  return transactions.map((item) => fromDDBItem<PaymentTransactions.DDBTransaction>(item));
 }

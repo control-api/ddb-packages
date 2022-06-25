@@ -1,12 +1,13 @@
-import {insertMany} from '@control-api/common-ddb';
 import {ulid} from 'ulid';
-import {DDBTransaction, Transaction, getTransactionFacetKey, getTransactionFacetType, tableName} from '../../table-helpers';
+import {insertMany} from '@control-api/common-ddb';
+import {PaymentTransactions} from '@control-api/types-ddb';
+import {getTransactionFacetKey, getTransactionFacetType, tableName} from '../../table-helpers';
 
-export async function insertTransactions(userId: string, transactions: Transaction[]): Promise<void> {
-  const ddbTransactions: DDBTransaction[] = transactions.map((transaction) => {
+export async function insertTransactions(userId: string, transactions: PaymentTransactions.Transaction[]): Promise<void> {
+  const ddbTransactions: PaymentTransactions.DDBTransaction[] = transactions.map((transaction) => {
     const extId = transaction.id;
     const id = ulid();
-    const ddbTransaction: DDBTransaction = {
+    const ddbTransaction: PaymentTransactions.DDBTransaction = {
       ...getTransactionFacetKey(userId, id),
       facetType: getTransactionFacetType(),
       ...transaction,
