@@ -12,12 +12,13 @@ export async function insertTransactions(
     const extCreatedAt = new Date(transaction.time * 1000);
     const extId = transaction.id;
     const id = ulid(extCreatedAt.getTime());
+
     const ddbTransaction: PaymentTransactions.DDBTransaction = {
       ...getTransactionFacetKey(userId, cardNumber, id),
       facetType: getTransactionFacetType(),
       ...transaction,
-      extCreatedAt: new Date(transaction.time * 1000).toISOString(),
-      createdAt: extCreatedAt.toISOString(),
+      extCreatedAt: extCreatedAt.toISOString(),
+      createdAt: new Date().toISOString(),
       extId,
       id,
     };
