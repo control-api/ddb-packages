@@ -9,14 +9,15 @@ export async function insertTransactions(
     transactions: Omit<PaymentTransactions.Transaction, 'extId' | 'extCreatedAt' | 'createdAt'>[],
 ): Promise<void> {
   const ddbTransactions: PaymentTransactions.DDBTransaction[] = transactions.map((transaction) => {
+    const extCreatedAt = new Date(transaction.time * 1000);
     const extId = transaction.id;
-    const id = ulid();
+    const id = ulid(extCreatedAt.getTime());
     const ddbTransaction: PaymentTransactions.DDBTransaction = {
       ...getTransactionFacetKey(userId, cardNumber, id),
       facetType: getTransactionFacetType(),
       ...transaction,
       extCreatedAt: new Date(transaction.time * 1000).toISOString(),
-      createdAt: new Date().toISOString(),
+      createdAt: extCreatedAt.toISOString(),
       extId,
       id,
     };
