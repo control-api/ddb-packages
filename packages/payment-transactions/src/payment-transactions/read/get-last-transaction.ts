@@ -2,7 +2,7 @@ import {find, fromDDBItem} from '@control-api/common-ddb';
 import {PaymentTransactions} from '@control-api/types-ddb';
 import {TRANSACTION_FACET_TYPE, TRANSACTION_PREFIX, getTransactionHashKey, tableName} from '../../table-helpers';
 
-export async function getLastTransactions(userId: string): Promise<PaymentTransactions.Transaction> {
+export async function getLastTransactions(userId: string): Promise<PaymentTransactions.Transaction | undefined> {
   const params = {
     TableName: tableName,
     KeyConditionExpression: 'hash_key = :hash_key and begins_with(range_key, :range_key) and facetType = :facetType',
@@ -15,6 +15,10 @@ export async function getLastTransactions(userId: string): Promise<PaymentTransa
   };
 
   const transactions = await find<PaymentTransactions.DDBTransaction>(params);
+
+  if (!transactions?.length) {
+    return;
+  }
 
   return fromDDBItem<PaymentTransactions.DDBTransaction>(transactions[0]);
 }
