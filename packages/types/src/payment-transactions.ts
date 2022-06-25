@@ -19,6 +19,7 @@ export type Transaction = {
   cashbackAmount: number;
   balance: number;
   extCreatedAt: string;
+  createdAt: string;
   comment?: string;
   receiptId?: string;
   invoiceId?: string;
