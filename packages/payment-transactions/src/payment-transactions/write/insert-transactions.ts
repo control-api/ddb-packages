@@ -6,7 +6,7 @@ import {getTransactionFacetKey, getTransactionFacetType, tableName} from '../../
 export async function insertTransactions(
     userId: string,
     cardNumber: string,
-    transactions: Omit<PaymentTransactions.Transaction, 'extId' | 'extCreatedAt'>[],
+    transactions: Omit<PaymentTransactions.Transaction, 'extId' | 'extCreatedAt' | 'createdAt'>[],
 ): Promise<void> {
   const ddbTransactions: PaymentTransactions.DDBTransaction[] = transactions.map((transaction) => {
     const extId = transaction.id;
@@ -16,6 +16,7 @@ export async function insertTransactions(
       facetType: getTransactionFacetType(),
       ...transaction,
       extCreatedAt: new Date(transaction.time * 1000).toISOString(),
+      createdAt: new Date().toISOString(),
       extId,
       id,
     };

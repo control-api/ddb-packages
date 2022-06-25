@@ -962,10 +962,10 @@
     lodash "4.17.21"
     p-map "4.0.0"
 
-"@control-api/types-ddb@*":
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/@control-api/types-ddb/-/types-ddb-1.2.5.tgz#a23552969ca0161f4cea7193053700d5d04e55b1"
-  integrity sha512-iqorxj7x7yW7L1p8LcNUi/9OBESschJmfkIt3FjYawtJ834vCw0TgjUPg3q0Vcxb9C/dGTZn6UZVKC2FovxlgA==
+"@control-api/types-ddb@1.2.10":
+  version "1.2.10"
+  resolved "https://registry.yarnpkg.com/@control-api/types-ddb/-/types-ddb-1.2.10.tgz#937d99ba8c30c7a1648ba7aa0488cc9c8d748026"
+  integrity sha512-3rq+K1FClEx3dQrcQXGQDE1OvprcojH0PhAmGTvnasNl0Y6PXw9ZS/AjyqiG7IOERE8L6B9w326qH4MAtHxHnA==
   dependencies:
     bank-sdk "*"
 
