@@ -6,3 +6,4 @@ export * from './insert-many';
 export * from './update-one';
 export * from './remove-one';
 export * from './remove-many';
+export * from './update-many';
