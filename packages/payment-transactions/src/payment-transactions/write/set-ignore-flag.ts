@@ -9,7 +9,7 @@ export async function setIgnoreFlagToTransactions(
   const itemsToUpdate = transactionIds.map((transactionId) => ({
     Key: getTransactionFacetKey(userId, cardNumber, transactionId),
     UpdateExpression:
-      'set #ignoredInCalculation = :ignoredInCalculation and set #updatedAt = :updatedAt',
+      'set #ignoredInCalculation = :ignoredInCalculation set #updatedAt = :updatedAt',
     ExpressionAttributeNames: {
       '#ignoredInCalculation': 'ignoredInCalculation',
       '#updatedAt': 'updatedAt',
