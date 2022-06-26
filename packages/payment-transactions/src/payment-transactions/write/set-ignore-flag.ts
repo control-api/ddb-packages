@@ -8,9 +8,16 @@ export async function setIgnoreFlagToTransactions(
 ): Promise<void> {
   const itemsToUpdate = transactionIds.map((transactionId) => ({
     Key: getTransactionFacetKey(userId, cardNumber, transactionId),
-    UpdateExpression: 'set #ignoredInCalculation = :ignoredInCalculation',
-    ExpressionAttributeNames: {'#ignoredInCalculation': 'ignoredInCalculation'},
-    ExpressionAttributeValues: {':ignoredInCalculation': true},
+    UpdateExpression:
+      'set #ignoredInCalculation = :ignoredInCalculation and set #updatedAt = :updatedAt',
+    ExpressionAttributeNames: {
+      '#ignoredInCalculation': 'ignoredInCalculation',
+      '#updatedAt': 'updatedAt',
+    },
+    ExpressionAttributeValues: {
+      ':ignoredInCalculation': true,
+      ':updatedAt': new Date().toISOString(),
+    },
   }));
 
   await updateMany({TableName: tableName, Items: itemsToUpdate});
