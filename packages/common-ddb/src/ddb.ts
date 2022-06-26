@@ -69,3 +69,9 @@ export async function batchWrite(
 
   return results;
 }
+
+export async function transactionWrite(
+    params: DocumentClient.TransactWriteItemsInput,
+): Promise<DocumentClient.TransactWriteItemsOutput> {
+  return ddb.transactWrite(params).promise();
+}
