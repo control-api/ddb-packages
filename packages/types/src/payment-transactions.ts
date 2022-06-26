@@ -20,6 +20,8 @@ export type Transaction = {
   balance: number;
   extCreatedAt: string;
   createdAt: string;
+  updatedAt?: string;
+  ignoredInCalculation?: boolean;
   comment?: string;
   receiptId?: string;
   invoiceId?: string;
