@@ -952,20 +952,20 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
-"@control-api/common-ddb@1.1.23":
-  version "1.1.23"
-  resolved "https://registry.yarnpkg.com/@control-api/common-ddb/-/common-ddb-1.1.23.tgz#5159d4d885dbf7477eceedaaf2e88e989bf0408f"
-  integrity sha512-VT1cFdTrXovYMDQ6kcj9kv/22mqnWtrodoQmUTI3f/Cgb1wCWJB2Wl4g4j7pMVDTfejLdu9RygbDlAo8C/BRFw==
+"@control-api/common-ddb@1.1.40":
+  version "1.1.40"
+  resolved "https://registry.yarnpkg.com/@control-api/common-ddb/-/common-ddb-1.1.40.tgz#543954b2a3e0ccccb86b7727d83d6ef3cd7c11e8"
+  integrity sha512-QWr8ncMdcOxnJ1YnKmgri7Qlmawd8aHRUVPZCDgI47m2qHbinFkS63i93mpmavhwWBWZB7tEIez5XgZBBOq6rQ==
   dependencies:
     "@aws/dynamodb-expressions" "0.7.3"
     aws-sdk "2.1152.0"
     lodash "4.17.21"
     p-map "4.0.0"
 
-"@control-api/types-ddb@1.2.10":
-  version "1.2.10"
-  resolved "https://registry.yarnpkg.com/@control-api/types-ddb/-/types-ddb-1.2.10.tgz#937d99ba8c30c7a1648ba7aa0488cc9c8d748026"
-  integrity sha512-3rq+K1FClEx3dQrcQXGQDE1OvprcojH0PhAmGTvnasNl0Y6PXw9ZS/AjyqiG7IOERE8L6B9w326qH4MAtHxHnA==
+"@control-api/types-ddb@1.2.16":
+  version "1.2.16"
+  resolved "https://registry.yarnpkg.com/@control-api/types-ddb/-/types-ddb-1.2.16.tgz#85d45f6397ef0850547ce710b8bd8930b667a9aa"
+  integrity sha512-zlYoUFNVas97xHz//nVLPMqDAyqxUFnhZ9ICQlMfb+JGSe/DGYXD88UQQWQllLju/Mh+6Kw+Jvdqe1l5V52Ylw==
   dependencies:
     bank-sdk "*"
 
