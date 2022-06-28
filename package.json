@@ -10,7 +10,8 @@
     "build-types-ddb": "cd packages/types && yarn && yarn build",
     "build-users-ddb": "cd packages/users && yarn && yarn build",
     "build-bank-ddb": "cd packages/bank-infos && yarn && yarn build",
-    "build-transactions-ddb": "cd packages/payment-transactions && yarn && yarn build"
+    "build-transactions-ddb": "cd packages/payment-transactions && yarn && yarn build",
+    "build-settings-ddb": "cd packages/settings && yarn && yarn build"
   },
   "devDependencies": {
     "@types/node": "17.0.42",
