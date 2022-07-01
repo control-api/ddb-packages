@@ -33,6 +33,7 @@ jobs:
       - run: cd packages/payment-transactions && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - run: npm run build-settings-ddb
       - run: cd packages/settings && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
