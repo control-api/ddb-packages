@@ -1,8 +1,10 @@
 import {DDBItemDefaults} from './common-ddb-types';
 
 export type TransactionFacet = 'Transaction';
+export type PaymentsReportFacet = 'Transaction';
 
 export type DDBTransaction = Transaction & DDBItemDefaults;
+export type DDBPaymentsReport = PaymentsReport & DDBItemDefaults;
 
 export type Transaction = {
   id: string;
@@ -29,3 +31,13 @@ export type Transaction = {
   counterIban?: string;
 }
 
+export type PaymentsReport = {
+  id: string,
+  createdAt: string,
+  spentAmount: number;
+  reportForDay: string;
+  limitUsage: number;
+  currentDailyLimit: number;
+  transactionsCount: number;
+  isPassedDailyLimit: boolean;
+}
