@@ -11,8 +11,8 @@ export const DAILY_LIMIT_PREFIX = `daily-limit`;
 
 export function getDailyLimitFacetKeys(userId: string) {
   return {
-    hashKey: getDailyLimitHashKey(userId),
-    rangeKey: getDailyLimitRangeKey(),
+    hash_key: getDailyLimitHashKey(userId),
+    range_key: getDailyLimitRangeKey(),
   };
 }
 
