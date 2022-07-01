@@ -12,7 +12,7 @@ export async function getTransactionsFromDate(
     userId: string,
     cardNumber: string,
     time: string,
-): Promise<PaymentTransactions.Transaction | undefined> {
+): Promise<PaymentTransactions.Transaction[]> {
   const fromTime = ulid(new Date(time).getTime());
 
   const params = {
@@ -25,11 +25,7 @@ export async function getTransactionsFromDate(
     ScanIndexForward: false,
   };
 
-  const transactions = await find<PaymentTransactions.DDBTransaction>(params);
+  const ddbTransactions = await find<PaymentTransactions.DDBTransaction>(params);
 
-  if (!transactions?.length) {
-    return;
-  }
-
-  return fromDDBItem<PaymentTransactions.DDBTransaction>(transactions[0]);
+  return ddbTransactions.map((item) => fromDDBItem<PaymentTransactions.DDBTransaction>(item));
 }
