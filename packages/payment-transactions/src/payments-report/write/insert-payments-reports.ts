@@ -7,7 +7,7 @@ import {
   tableName,
 } from '../../table-helpers';
 
-export async function insertTransactions(
+export async function insertPaymentsReports(
     userId: string,
     cardNumber: string,
     paymentsReports: PaymentTransactions.PaymentsReport[],
