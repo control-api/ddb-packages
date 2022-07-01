@@ -1,7 +1,7 @@
 import {DDBItemDefaults} from './common-ddb-types';
 
 export type TransactionFacet = 'Transaction';
-export type PaymentsReportFacet = 'Transaction';
+export type PaymentsReportFacet = 'Payments-Report';
 
 export type DDBTransaction = Transaction & DDBItemDefaults;
 export type DDBPaymentsReport = PaymentsReport & DDBItemDefaults;
@@ -40,4 +40,5 @@ export type PaymentsReport = {
   currentDailyLimit: number;
   transactionsCount: number;
   isPassedDailyLimit: boolean;
+  lastTransactionTime: string;
 }
