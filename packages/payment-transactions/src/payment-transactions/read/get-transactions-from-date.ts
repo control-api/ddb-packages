@@ -17,7 +17,7 @@ export async function getTransactionsFromDate(
 
   const params = {
     TableName: tableName,
-    KeyConditionExpression: 'hash_key = :hash_key and range_key <= :range_key',
+    KeyConditionExpression: 'hash_key = :hash_key and range_key >= :range_key',
     ExpressionAttributeValues: {
       ':hash_key': getTransactionHashKey(userId),
       ':range_key': `${CARD_NUMBER_PREFIX}#${cardNumber}#${TRANSACTION_PREFIX}#${fromTime}`,
