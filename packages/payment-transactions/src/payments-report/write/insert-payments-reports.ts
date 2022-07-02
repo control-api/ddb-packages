@@ -7,10 +7,14 @@ import {
   tableName,
 } from '../../table-helpers';
 
+type Params = {
+  userId: string,
+  cardNumber: string,
+  paymentsReports: PaymentTransactions.PaymentsReport[],
+}
+
 export async function insertPaymentsReports(
-    userId: string,
-    cardNumber: string,
-    paymentsReports: PaymentTransactions.PaymentsReport[],
+    {userId, cardNumber, paymentsReports}: Params,
 ): Promise<void> {
   const ddbPaymentsReports: PaymentTransactions.DDBPaymentsReport[] = paymentsReports
       .map((paymentsReport) => {
