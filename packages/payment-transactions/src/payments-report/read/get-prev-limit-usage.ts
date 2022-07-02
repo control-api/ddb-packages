@@ -7,6 +7,7 @@ import {
   tableName,
 } from '../../table-helpers';
 
+// TODO: Remove this method when we will store previous limit usage in the payments report
 export async function getPrevLimitUsage(
     userId: string,
     cardNumber: string,
