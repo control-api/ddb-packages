@@ -1,6 +1,6 @@
 {
   "name": "@control-api/users-ddb",
-  "version": "1.0.48",
+  "version": "1.0.49",
   "main": "lib/",
   "license": "MIT",
   "author": "Maksym-Haiovets <makcumyt@gmail.com>",
