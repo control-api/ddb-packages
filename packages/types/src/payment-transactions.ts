@@ -41,4 +41,5 @@ export type PaymentsReport = {
   transactionsCount: number;
   isPassedDailyLimit: boolean;
   lastTransactionTime: string;
+  prevLimitUsage: number;
 }
