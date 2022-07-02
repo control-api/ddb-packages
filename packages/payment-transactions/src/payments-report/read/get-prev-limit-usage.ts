@@ -23,5 +23,9 @@ export async function getPrevLimitUsage(
 
   const paymentsReports = await find<PaymentTransactions.DDBPaymentsReport>(params);
 
+  if (paymentsReports?.length < 1) {
+    return 50000;
+  }
+
   return paymentsReports[1].limitUsage;
 }
