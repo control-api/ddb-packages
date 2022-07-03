@@ -39,7 +39,7 @@ export function getTokenFacetType(): BankInfos.TokenFacet {
 // Solution:
 // 1. Change range_key from `info` to `bank_name#${bankName}#info`
 // 2. Update relevant methods to use this new range_key
-// 
+//
 // Update authorizer:
 //    1. Validate passed card number(s)
 //    2. Add bank info of all the user's banks to event payload
