@@ -13,12 +13,12 @@ export const PAYMENTS_REPORT_FACET = 'Payments-Report';
 
 export function getTransactionFacetKey(
     userId: string,
-    cardNumber: string,
+    cardId: string,
     transactionId: string,
 ): DDB.FacetKeys {
   return {
     hash_key: getTransactionHashKey(userId),
-    range_key: getTransactionRangeKey(cardNumber, transactionId),
+    range_key: getTransactionRangeKey(cardId, transactionId),
   };
 }
 
@@ -26,8 +26,8 @@ export function getTransactionHashKey(userId: string): string {
   return `${USER_PREFIX}#${userId}#${TRANSACTION_PREFIX}`;
 }
 
-export function getTransactionRangeKey(cardNumber: string, transactionId: string): string {
-  return `${CARD_NUMBER_PREFIX}#${cardNumber}#${TRANSACTION_PREFIX}#${transactionId}`;
+export function getTransactionRangeKey(cardId: string, transactionId: string): string {
+  return `${CARD_NUMBER_PREFIX}#${cardId}#${TRANSACTION_PREFIX}#${transactionId}`;
 }
 
 export function getTransactionFacetType(): PaymentTransactions.TransactionFacet {
@@ -38,12 +38,12 @@ export function getTransactionFacetType(): PaymentTransactions.TransactionFacet 
 
 export function getPaymentsReportFacetKey(
     userId: string,
-    cardNumber: string,
+    cardId: string,
     paymentsReportId: string,
 ): DDB.FacetKeys {
   return {
     hash_key: getPaymentsReportHashKey(userId),
-    range_key: getPaymentsReportRangeKey(cardNumber, paymentsReportId),
+    range_key: getPaymentsReportRangeKey(cardId, paymentsReportId),
   };
 }
 
@@ -51,8 +51,8 @@ export function getPaymentsReportHashKey(userId: string): string {
   return `${USER_PREFIX}#${userId}#${PAYMENTS_REPORT_PREFIX}`;
 }
 
-export function getPaymentsReportRangeKey(cardNumber: string, paymentsReportId: string): string {
-  return `${CARD_NUMBER_PREFIX}#${cardNumber}#${PAYMENTS_REPORT_PREFIX}#${paymentsReportId}}`;
+export function getPaymentsReportRangeKey(cardId: string, paymentsReportId: string): string {
+  return `${CARD_NUMBER_PREFIX}#${cardId}#${PAYMENTS_REPORT_PREFIX}#${paymentsReportId}}`;
 }
 
 export function getPaymentsReportFacetType(): PaymentTransactions.PaymentsReportFacet {

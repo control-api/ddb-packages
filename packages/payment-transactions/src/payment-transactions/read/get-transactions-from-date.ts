@@ -8,11 +8,17 @@ import {
   tableName,
 } from '../../table-helpers';
 
-export async function getTransactionsFromDate(
-    userId: string,
-    cardNumber: string,
-    time: string,
-): Promise<PaymentTransactions.Transaction[]> {
+type Params = {
+  userId: string;
+  cardId: string;
+  time: string;
+}
+
+export async function getTransactionsFromDate({
+  userId,
+  cardId,
+  time,
+}: Params): Promise<PaymentTransactions.Transaction[]> {
   const fromTime = ulid(new Date(time).getTime());
 
   const params = {
@@ -20,7 +26,7 @@ export async function getTransactionsFromDate(
     KeyConditionExpression: 'hash_key = :hash_key and range_key >= :range_key',
     ExpressionAttributeValues: {
       ':hash_key': getTransactionHashKey(userId),
-      ':range_key': `${CARD_NUMBER_PREFIX}#${cardNumber}#${TRANSACTION_PREFIX}#${fromTime}`,
+      ':range_key': `${CARD_NUMBER_PREFIX}#${cardId}#${TRANSACTION_PREFIX}#${fromTime}`,
     },
     ScanIndexForward: false,
   };
