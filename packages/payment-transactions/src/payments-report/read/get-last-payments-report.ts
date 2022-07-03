@@ -7,16 +7,21 @@ import {
   tableName,
 } from '../../table-helpers';
 
-export async function getLastPaymentsReport(
-    userId: string,
-    cardNumber: string,
-): Promise<PaymentTransactions.PaymentsReport | undefined> {
+type Params = {
+  userId: string,
+  cardId: string,
+}
+
+export async function getLastPaymentsReport({
+  userId,
+  cardId,
+}: Params): Promise<PaymentTransactions.PaymentsReport | undefined> {
   const params = {
     TableName: tableName,
     KeyConditionExpression: 'hash_key = :hash_key and begins_with(range_key, :range_key)',
     ExpressionAttributeValues: {
       ':hash_key': getPaymentsReportHashKey(userId),
-      ':range_key': `${CARD_NUMBER_PREFIX}#${cardNumber}#${PAYMENTS_REPORT_PREFIX}#`,
+      ':range_key': `${CARD_NUMBER_PREFIX}#${cardId}#${PAYMENTS_REPORT_PREFIX}#`,
     },
     ScanIndexForward: false,
   };

@@ -1,13 +1,19 @@
 import {updateMany} from '@control-api/common-ddb';
 import {getTransactionFacetKey, tableName} from '../../table-helpers';
 
-export async function setIgnoreFlagToTransactions(
-    userId: string,
-    cardNumber: string,
-    transactionIds: string[],
-): Promise<void> {
+type Params = {
+  userId: string,
+  cardId: string,
+  transactionIds: string[],
+}
+
+export async function setIgnoreFlagToTransactions({
+  userId,
+  cardId,
+  transactionIds,
+}: Params): Promise<void> {
   const itemsToUpdate = transactionIds.map((transactionId) => ({
-    Key: getTransactionFacetKey(userId, cardNumber, transactionId),
+    Key: getTransactionFacetKey(userId, cardId, transactionId),
     UpdateExpression:
       'set #ignoredInCalculation = :ignoredInCalculation, #updatedAt = :updatedAt',
     ExpressionAttributeNames: {

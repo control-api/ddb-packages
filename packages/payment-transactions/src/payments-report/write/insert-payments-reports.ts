@@ -9,19 +9,21 @@ import {
 
 type Params = {
   userId: string,
-  cardNumber: string,
+  cardId: string,
   paymentsReports: PaymentTransactions.PaymentsReport[],
 }
 
-export async function insertPaymentsReports(
-    {userId, cardNumber, paymentsReports}: Params,
-): Promise<void> {
+export async function insertPaymentsReports({
+  userId,
+  cardId,
+  paymentsReports,
+}: Params): Promise<void> {
   const ddbPaymentsReports: PaymentTransactions.DDBPaymentsReport[] = paymentsReports
       .map((paymentsReport) => {
         const id = ulid(new Date(paymentsReport.lastTransactionTime).getTime());
 
         const ddbPaymentsReport: PaymentTransactions.DDBPaymentsReport = {
-          ...getPaymentsReportFacetKey(userId, cardNumber, id),
+          ...getPaymentsReportFacetKey(userId, cardId, id),
           facetType: getPaymentsReportFacetType(),
           ...paymentsReport,
           createdAt: new Date().toISOString(),

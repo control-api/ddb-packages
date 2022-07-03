@@ -1,6 +1,6 @@
 {
   "name": "@control-api/payment-transactions-ddb",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "main": "lib/",
   "license": "MIT",
   "author": "Maksym-Haiovets <makcumyt@gmail.com>",
