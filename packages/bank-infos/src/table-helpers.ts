@@ -29,6 +29,23 @@ export function getTokenFacetType(): BankInfos.TokenFacet {
 }
 
 //* * * Bank Info Facet Type * * *//
+
+// need adjustments to the bank-infos table
+// for now we have the following structure:
+// user -> one bank -> many cards
+// we need to change this to:
+// user -> many banks -> many cards
+
+// Solution:
+// 1. Change range_key from `info` to `bank_name#${bankName}#info`
+// 2. Update relevant methods to use this new range_key
+// 3. Update authorizer:
+//    1. Validate passed card number
+//    2. Add bank info of all the user's banks
+// API side:
+//    1. Add helper that find bank info by curd number
+//    2. Use already existing getCardId helper to get card id
+
 export function getBankInfoFacetKeys(userId: string): DDB.FacetKeys {
   return {
     hash_key: getBankInfoHashKey(userId),
