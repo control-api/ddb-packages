@@ -39,12 +39,14 @@ export function getTokenFacetType(): BankInfos.TokenFacet {
 // Solution:
 // 1. Change range_key from `info` to `bank_name#${bankName}#info`
 // 2. Update relevant methods to use this new range_key
-// 3. Update authorizer:
-//    1. Validate passed card number
-//    2. Add bank info of all the user's banks
+// 
+// Update authorizer:
+//    1. Validate passed card number(s)
+//    2. Add bank info of all the user's banks to event payload
 // API side:
-//    1. Add helper that find bank info by curd number
-//    2. Use already existing getCardId helper to get card id
+//    1. Get bankInfos from event
+//    2. Add helper that will be searching bank info by card number in bankInfos array
+//    3. Use already existing getCardId helper to get card id
 
 export function getBankInfoFacetKeys(userId: string): DDB.FacetKeys {
   return {
