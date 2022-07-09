@@ -8,6 +8,7 @@ export const TOKEN_PREFIX = 'token';
 export const BANK_TOKEN_FACET_TYPE = 'Token';
 export const INFO_PREFIX = 'info';
 export const BANK_INFO_FACET_TYPE = 'Info';
+export const BANK_NAME_PREFIX = 'bank-name';
 
 //* * * Bank Token Facet Type * * *//
 export function getTokenFacetKeys(userId: string): DDB.FacetKeys {
@@ -61,7 +62,7 @@ export function getBankInfoHashKey(userId: string): string {
 }
 
 export function getBankInfoRangeKey(bankName: BankName): string {
-  return `bank_name#${bankName}#${INFO_PREFIX}`;
+  return `${BANK_NAME_PREFIX}#${bankName}#${INFO_PREFIX}`;
 }
 
 export function getBankInfoFacetType(): BankInfos.InfoFacet {
