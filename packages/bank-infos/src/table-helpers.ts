@@ -1,3 +1,4 @@
+import {BankName} from 'bank-sdk';
 import type {BankInfos, DDB} from '@control-api/types-ddb';
 
 export const tableName = 'bank-infos';
@@ -48,10 +49,10 @@ export function getTokenFacetType(): BankInfos.TokenFacet {
 //    2. Add helper that will be searching bank info by card number in bankInfos array
 //    3. Use already existing getCardId helper to get card id
 
-export function getBankInfoFacetKeys(userId: string): DDB.FacetKeys {
+export function getBankInfoFacetKeys(userId: string, bankName: BankName): DDB.FacetKeys {
   return {
     hash_key: getBankInfoHashKey(userId),
-    range_key: getBankInfoRangeKey(),
+    range_key: getBankInfoRangeKey(bankName),
   };
 }
 
@@ -59,8 +60,8 @@ export function getBankInfoHashKey(userId: string): string {
   return `${USER_PREFIX}#${userId}#${INFO_PREFIX}`;
 }
 
-export function getBankInfoRangeKey(): string {
-  return INFO_PREFIX;
+export function getBankInfoRangeKey(bankName: BankName): string {
+  return `bank_name#${bankName}#${INFO_PREFIX}`;
 }
 
 export function getBankInfoFacetType(): BankInfos.InfoFacet {
